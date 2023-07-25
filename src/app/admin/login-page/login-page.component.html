@@ -1,1 +1,38 @@
-<p>login-page works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Login form</h2>
+  <div class="form-control">
+    <label for="email">Email address</label>
+    <input id="email" type="email" formControlName="email">
+    <div
+      class="validation"
+      *ngIf="form.get('email').touched && form.get('email').invalid"
+    >
+      <small *ngIf="form.get('email').errors['required']">Required filed!</small>
+      <small *ngIf="form.get('email').errors['email']">Email field!</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password">
+    <div
+      class="validation"
+      *ngIf="form.get('password').touched && form.get('password').invalid"
+    >
+      <small *ngIf="form.get('password').errors['required']">Required filed!</small>
+      <small *ngIf="form.get('password').errors['minlength']">
+        Min length is 6 symbols.
+          {{form.get('password').value.length}}
+        is entered
+      </small>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary btn-block"
+    [disabled]="form.invalid"
+  >
+    Submit
+  </button>
+</form>
