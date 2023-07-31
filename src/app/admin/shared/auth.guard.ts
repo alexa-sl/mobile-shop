@@ -13,10 +13,13 @@ class permissionService {
   ) {
   }
 
+  authState: boolean = false;
+  authStatus$ = this.auth.authStatus.subscribe(res => {
+    this.authState = res;
+  });
   canActivate() {
-    let authStatus$ = this.auth.authStatus.subscribe();
-    console.log('guards', !!authStatus$);
-    if (!!authStatus$) {
+    console.log('guards', this.authState);
+    if (this.authState) {
       return true;
     } else {
       this.router.navigate(['/admin', 'login']).then();
