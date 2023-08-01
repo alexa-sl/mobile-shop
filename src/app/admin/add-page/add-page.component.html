@@ -39,7 +39,7 @@
   </div>
   <div class="form-control">
     <label for="price"></label>
-    <input type="text" id="price" formControlName="price">
+    <input type="number" id="price" formControlName="price">
     <div class="validation" *ngIf="form.get('price').touched && form.get('price').invalid">
       <small *ngIf="form.get('price').errors['required']">
         Title is mandatory field!

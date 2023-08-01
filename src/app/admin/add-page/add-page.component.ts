@@ -20,8 +20,6 @@ export class AddPageComponent implements OnInit {
       info: new FormControl(null, Validators.required),
       price: new FormControl(null, [Validators.required, Validators.min(1)])
     });
-
-    this.form.statusChanges.subscribe((res) => console.log(res))
   }
 
   submit(){
