@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
 import {QuillModule} from "ngx-quill";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {QuillModule} from "ngx-quill";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     QuillModule.forRoot()
   ],
   providers: [],
