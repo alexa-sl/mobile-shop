@@ -1,5 +1,5 @@
 <nav class="navbar bg-dark">
-  <h2>Online shop</h2>
+  <h2><a routerLink="/">Online shop</a></h2>
   <ul>
     <li routerLink="active"><a routerLink="/">Phone</a></li>
     <li routerLink="active"><a routerLink="/">Tablet</a></li>
@@ -8,4 +8,7 @@
     <li routerLink="active"><a [routerLink]="['/admin']">Admin</a></li>
   </ul>
 </nav>
-<router-outlet></router-outlet>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

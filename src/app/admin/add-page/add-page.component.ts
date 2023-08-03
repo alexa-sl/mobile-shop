@@ -14,10 +14,10 @@ export class AddPageComponent implements OnInit {
   form: FormGroup;
   ngOnInit() {
     this.form = new FormGroup({
-      type: new FormControl(null, Validators.required),
+      category: new FormControl(null, Validators.required),
       title: new FormControl(null, Validators.required),
-      photo: new FormControl(null, Validators.required),
-      info: new FormControl(null, Validators.required),
+      image: new FormControl(null, Validators.required),
+      description: new FormControl(null, Validators.required),
       price: new FormControl(null, [Validators.required, Validators.min(1)])
     });
   }
@@ -28,10 +28,10 @@ export class AddPageComponent implements OnInit {
     }
 
     const product: IProduct = {
-      type: this.form.value.type,
+      category: this.form.value.type,
       title: this.form.value.title,
-      photo: this.form.value.photo,
-      info: this.form.value.info,
+      image: this.form.value.photo,
+      description: this.form.value.info,
       price: this.form.value.price
     }
 
