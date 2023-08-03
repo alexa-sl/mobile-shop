@@ -20,13 +20,20 @@ export class ProductService {
   }
 
   getAllProducts() {
-    console.log('get all service');
     return this.http.get<IProduct[]>(`${environment.apiUrl}/products`)
       .pipe(
         tap((res) => {
           console.log('res', res);
           return res;
         }),
+      )
+  }
+
+  getProduct(id) {
+    console.log('prod service');
+    return this.http.get<IProduct>(`${environment.apiUrl}/products/${id}`)
+      .pipe(
+        tap(res => console.log('product ', res.image))
       )
   }
 }
