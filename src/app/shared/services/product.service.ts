@@ -25,4 +25,8 @@ export class ProductService {
   deleteProduct(id) {
      return this.http.delete(`${environment.apiUrl}/products/${id}`)
   }
+
+  updateProduct(id, product) {
+    return this.http.patch(`${environment.apiUrl}/products/${id}`, product)
+  }
 }

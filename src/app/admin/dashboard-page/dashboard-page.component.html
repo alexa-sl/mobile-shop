@@ -7,7 +7,7 @@
         <td>ID</td>
         <td>Name</td>
         <td>Price</td>
-        <td>Open</td>
+        <td>Edit</td>
         <td>Delete</td>
       </tr>
     </thead>
@@ -18,7 +18,7 @@
         <td>{{product.price}}</td>
         <td>
           <button class="btn btn-dark" [routerLink]="['/admin', 'product', product.id, 'edit']">
-            Open
+            Edit
           </button>
         </td>
         <td>

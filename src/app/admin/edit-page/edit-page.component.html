@@ -1,1 +1,60 @@
+<div *ngIf="product; else loading">
+  <form (ngSubmit)="submit()" [formGroup]="form">
+    <h2>Update product</h2>
+    <div class="form-control">
+      <select id="category" formControlName="category">
+        <option value="phone">Phone</option>
+        <option value="tablet">Tablet</option>
+        <option value="laptop">Laptop</option>
+      </select>
+      <div class="validation" *ngIf="form.get('category').touched && form.get('category').invalid">
+        <small *ngIf="form.get('category').errors['required']">
+          Type of product is mandatory field!
+        </small>
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="title"></label>
+      <input type="text" id="title" formControlName="title">
+      <div class="validation" *ngIf="form.get('title').touched && form.get('title').invalid">
+        <small *ngIf="form.get('title').errors['required']">
+          Title is mandatory field!
+        </small>
+      </div>
+    </div>
+    <div class="form-control">
+      <quill-editor formControlName="image"></quill-editor>
+      <div class="validation" *ngIf="form.get('image').touched && form.get('image').invalid">
+        <small *ngIf="form.get('image').errors['required']">
+          Image is mandatory field!
+        </small>
+      </div>
+    </div>
+    <div class="form-control">
+      <quill-editor formControlName="description"></quill-editor>
+      <div class="validation" *ngIf="form.get('description').touched && form.get('description').invalid">
+        <small *ngIf="form.get('description').errors['required']">
+          Description is mandatory field!
+        </small>
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="price"></label>
+      <input type="number" id="price" formControlName="price">
+      <div class="validation" *ngIf="form.get('price').touched && form.get('price').invalid">
+        <small *ngIf="form.get('price').errors['required']">
+          Title is mandatory field!
+        </small>
+        <small *ngIf="form.get('price').errors['min']">
+          Min price is $1
+        </small>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Update product</button>
+  </form>
+</div>
+
+<ng-template #loading>
+  Loading.....
+</ng-template>
 
