@@ -21,12 +21,12 @@ import { ProductComponent } from './product/product.component';
     MainLayoutComponent,
     ProductComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    QuillModule.forRoot()
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        QuillModule.forRoot()
+    ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

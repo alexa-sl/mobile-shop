@@ -1,7 +1,10 @@
 <div class="text-center">
   <h2>{{product.title}}</h2>
   <div>
-    <quill-view-html [content]="product.description"></quill-view-html>
+    <quill-view-html [content]="product.image"></quill-view-html>
+  </div>
+  <div>
+    <img alt="{{product.title}}" src="{{product.image}}"/>
   </div>
   <h2>Price: {{product.price}}</h2>
   <button class="btn bg-dark" routerLink="/cart">Buy</button>
