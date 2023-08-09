@@ -26,5 +26,8 @@ export class ProductPageComponent implements OnInit {
     }))
   }
 
+  addToCart(product: IProduct) {
+    this.prodService.addCartProduct(product);
+  }
 
 }

@@ -9,6 +9,7 @@ import {IProduct} from "../interfaces/IProduct";
 export class ProductService {
 
   constructor(private http: HttpClient) {}
+  cartProducts: IProduct[] = [];
 
   create(product) {
     return this.http.post(`${environment.apiUrl}/products`, product)
@@ -28,5 +29,13 @@ export class ProductService {
 
   updateProduct(id, product) {
     return this.http.patch(`${environment.apiUrl}/products/${id}`, product)
+  }
+
+  addCartProduct(product) {
+    this.cartProducts.push(product);
+  }
+
+  getCartProducts() {
+    return this.cartProducts;
   }
 }
