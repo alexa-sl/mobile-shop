@@ -25,7 +25,7 @@ export class CartPageComponent implements OnInit, OnDestroy {
      this.totalPrice += this.cartProducts[i].price;
    }
 
-   this.getCurrentProductCount(this.cartProducts);
+   this.getCurrentProductCount();
    this.cartProducts = this.removeDuplicates(this.cartProducts);
    this.mergeCounted(this.cartProducts, this.countedIDs, 'id');
 
@@ -35,10 +35,10 @@ export class CartPageComponent implements OnInit, OnDestroy {
    console.log('on init')
  }
 
- getCurrentProductCount(products){
+ getCurrentProductCount(){
    const groupedProducts = new Map<number, number>();
 
-   this.cartProducts.forEach((product, index) => {
+   this.cartProducts.forEach((product) => {
      if (!groupedProducts.has(product.id)) {
        groupedProducts.set(product.id, 1);
      } else {
@@ -90,8 +90,6 @@ export class CartPageComponent implements OnInit, OnDestroy {
  }
 
  removeProduct(product: IProduct) {
-   //this.cartProducts[this.cartProducts.indexOf(product)].counter -= 1;
-   const index = 0;
    this.cartProducts = this.cartProducts.filter(currentProduct => currentProduct.id !== product.id);
  }
 
