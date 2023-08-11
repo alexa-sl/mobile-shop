@@ -2,7 +2,8 @@ export interface IProduct {
   category: string;
   description: string;
   image: string;
-  price:  string;
+  price:  number;
   title: string;
-  id?: number
+  id: number;
+  counter?: number;
 }

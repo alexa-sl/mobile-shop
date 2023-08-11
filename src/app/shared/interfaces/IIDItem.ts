@@ -1,4 +1,4 @@
 export interface IIDItem {
-  'id': number;
-  'counter': number
+  id: number;
+  counter: number
 }

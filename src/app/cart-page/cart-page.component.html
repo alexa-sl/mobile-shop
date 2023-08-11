@@ -9,18 +9,33 @@
     <th>Title</th>
     <th>Quantity</th>
     <th>Price</th>
+    <th>Sum</th>
+    <th>Remove</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let product of cartProducts">
     <td>{{product.title}}</td>
-    <td>{{product.id}}</td>
-    <td>{{product.price}}</td>
+    <td [formGroup]="productAmountForm">
+      <input
+        type="number"
+        formControlName="productAmount"
+        [value]="product.counter"
+        (change)="updateProductAmount(product)"
+      />
+    </td>
+    <td>{{product.price | currency}}</td>
+    <td>{{+product.price * +product.counter | currency}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="removeProduct(product)">Remove</button>
+    </td>
   </tr>
   <tr>
     <td></td>
     <td></td>
-    <td>{{totalPrice | currency}}</td>
+    <td></td>
+    <td></td>
+    <td>{{totalPrice | currency }}</td>
   </tr>
   </tbody>
 </table>

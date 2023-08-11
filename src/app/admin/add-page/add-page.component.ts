@@ -14,6 +14,7 @@ export class AddPageComponent implements OnInit {
   form: FormGroup;
   ngOnInit() {
     this.form = new FormGroup({
+      id: new FormControl(-1),
       category: new FormControl(null, Validators.required),
       title: new FormControl(null, Validators.required),
       image: new FormControl(null, Validators.required),
@@ -28,6 +29,7 @@ export class AddPageComponent implements OnInit {
     }
 
     const product: IProduct = {
+      id: this.form.value.id,
       category: this.form.value.type,
       title: this.form.value.title,
       image: this.form.value.photo,
