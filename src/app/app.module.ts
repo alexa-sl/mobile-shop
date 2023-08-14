@@ -11,7 +11,7 @@ import {QuillModule} from "ngx-quill";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./shared/auth.interceptor";
 import { ProductComponent } from './product/product.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     AppRoutingModule,
     HttpClientModule,
     QuillModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     {
